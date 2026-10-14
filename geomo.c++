@@ -7,30 +7,37 @@ e pares isolados.Verificando se os numeros condizem coma alguma geometria presen
 
 char geometriadamolecula (int pares_estereoativos,int ligantes,int isolados)
 {
+    //geometria linear//
     if (pares_estereoativos == 1 && ligantes == 1 && isolados == 0){
     cout<<"a molecula tem 1 par estereoativo,um ligante e 0 pares isolados "<<endl;
     cout<<"entao a molecula tem geometria molecular Linear"<<endl;}
-
+        
+    //geometria linear//
     else if (pares_estereoativos== 2 && ligantes == 2 && isolados == 0){
     cout<<"a molecula tem 2 pares estereoativos,dois ligantes e 0 pares isolados "<<endl;
     cout<<"entao a molecula tem geometria molecular Linear"<<endl;}
-
+        
+    //geometria triagular plana//
     else if (pares_estereoativos== 3 && ligantes == 3 && isolados == 0 ){
     cout<<"a molecula tem 3 pares estereoativos,3 ligantes e 0 pares isolados"<<endl;
     cout<<"entao a molecula tem a geometria molecular trigonal plana"<<endl;}
-  
+        
+    //geometria angular//
     else if (pares_estereoativos== 3 && ligantes == 2 && isolados == 1){
     cout<<"a molecula tem 3 pares estereoativos,2 ligantes e 1 par isolado"<<endl;
     cout<<"entao a molecula tem geometria molecular angular"<<endl;}
-    
+        
+    //geometria tetraedrica//
     else if (pares_estereoativos == 4 && ligantes == 4 && isolados ==0){
     cout<<"a molecula tem 4 estereoativos,4 ligantes e 0 pares isolados"<<endl;
     cout<<"entao a molecula tem geometria molecular tetraedrica e espacial"<<endl;}
-
+        
+    //geometria piramidal//
     else if (pares_estereoativos == 4 && ligantes ==3 && isolados == 1 ){
     cout<<"a molecula tem 4 estereoativos,3 ligantes e par isolado"<<endl;
     cout<<"entao a molecula tem geometria molecular piramidal e espacial "<<endl;}
-  
+   
+    //geometria tetraedrica angular//
     else if (pares_estereoativos == 4 && ligantes ==2 && isolados == 2) {
     cout<<"a molecula tem 4 pares estereoativos, 2 ligantes e 2 pares isolados"<<endl;
     cout<<"entao a molecula tem a geometria tetraedrica angular e nao eh espacial"<< endl;}
@@ -45,8 +52,10 @@ char geometriadamolecula (int pares_estereoativos,int ligantes,int isolados)
 int main( ){
     int pares_estereoativos , pares_ligantes , pares_isolados;
     int escolha_usuario;
- 
+
     escolha_usuario = 0;
+
+    //loop que mostra o Menu principal//
     while(escolha_usuario != 1){
     cout<<"//==================================================//"<<endl;
     cout<<"--MENU PRINCIPAL--"<<endl;
@@ -64,6 +73,7 @@ int main( ){
         cout<<"PARES NÃO-LIGANTES/ISOLADOS = elétrons que não participam de nenhuma de ligação e tem uma grande repulsão aos outros elétrons"<<endl;
     }
 
+    //loop que descobre a geometria molecular pelas variaveis pares esterioativos,ligantes e isolados//
     if (escolha_usuario == 1){
         while (escolha_usuario ==1)
     {
@@ -73,7 +83,8 @@ int main( ){
     cin>>pares_ligantes;
     cout<<"escreva os pares isolados:"<<endl;
     cin>>pares_isolados;
-    
+
+    //aqui "chamamos" a funcao do inicio//
     cout<<"conclusao:"<<geometriadamolecula(pares_estereoativos,pares_ligantes,pares_isolados) <<endl;
     cout<<"gostaria de continuar o programa?(escolha números negativos para sair do programa/escolha 1 para continuar/ escolha qualquer para voltar ao Menu)"<<endl;
     cout<<"digite 2 para ler os conceitos da geometria molecular"<<endl;
@@ -81,6 +92,7 @@ int main( ){
     
    }
   }
+    //quebra do loop/quebra do programa//
   if (escolha_usuario < 0){
     break;
   }
